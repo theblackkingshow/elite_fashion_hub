@@ -1,0 +1,6 @@
+{
+  "name": "MAISON Luxury Editorial",
+  "description": "Minimalist luxury fashion boutique and marketplace featuring Men's, Women's, and Kids collections (executive suits, authentic Ankara Afro-chic dresses, organic denim sherpa jackets, Italian footwear, Curren chronographs), Atelier Admin Studio for editing prices and inventory, real-time search, and multi-method checkout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
