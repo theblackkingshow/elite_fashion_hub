@@ -30,7 +30,7 @@ export const EditorialModal: React.FC<EditorialModalProps> = ({ activeTab, onClo
         <div className="flex justify-between items-center pb-5 border-b border-[#e5e5e5]">
           <div>
             <span className="text-[11px] font-display uppercase tracking-[0.2em] text-[#747878] font-semibold">
-              MAISON Editorial Archive
+              Elite Fashion Hub Editorial Archive
             </span>
             <h2 className="font-display text-[26px] md:text-[32px] uppercase tracking-[0.05em] text-[#1b1c1c] font-medium mt-1">
               {activeTab}
@@ -81,7 +81,7 @@ export const EditorialModal: React.FC<EditorialModalProps> = ({ activeTab, onClo
                 Circular Craftsmanship & Zero-Compromise Materiality
               </p>
               <p>
-                At MAISON, sustainability is not an afterthought or marketing label—it is the foundational constraint of our pattern cutting and material sourcing.
+                At Elite Fashion Hub, sustainability is not an afterthought or marketing label—it is the foundational constraint of our pattern cutting and material sourcing.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
                 <div className="p-4 bg-[#f5f3f3] border border-[#e5e5e5]">
@@ -142,7 +142,7 @@ export const EditorialModal: React.FC<EditorialModalProps> = ({ activeTab, onClo
                   <p className="font-display text-[12px] uppercase tracking-wider text-[#1b1c1c] font-semibold">
                     Client Concierge
                   </p>
-                  <p className="font-mono text-[13px] text-[#5d5f5f] mt-1">concierge@maison-editorial.com</p>
+                  <p className="font-mono text-[13px] text-[#5d5f5f] mt-1">concierge@elitefashionhub.com</p>
                 </div>
                 <div className="p-4 bg-white border border-[#e5e5e5]">
                   <Phone className="w-5 h-5 text-[#1b1c1c] mb-2" />

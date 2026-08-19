@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTab, onLogoClick, onOpenAd
           onClick={onLogoClick}
           className="font-display text-[20px] md:text-[22px] uppercase tracking-[0.2em] text-[#1b1c1c] font-medium text-left cursor-pointer hover:opacity-80 transition-opacity"
         >
-          MAISON
+          ELITE FASHION HUB
         </button>
 
         <nav className="flex flex-wrap items-center gap-6 font-body text-[15px] text-[#5d5f5f]">
@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTab, onLogoClick, onOpenAd
 
       <div className="max-w-[1440px] mx-auto w-full text-[#747878] font-body text-[13px] md:text-[14px] mt-4 pt-4 border-t border-[#e5e5e5]/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
         <div className="flex flex-wrap items-center gap-4">
-          <p>© 2024 MAISON EDITORIAL. ALL RIGHTS RESERVED.</p>
+          <p>© 2024 ELITE FASHION HUB. ALL RIGHTS RESERVED.</p>
           <span className="hidden sm:inline text-[#c4c7c7]">•</span>
           <p className="font-mono text-[11px] text-[#747878]">PARIS • MILAN • TOKYO • NEW YORK</p>
         </div>

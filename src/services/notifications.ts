@@ -39,14 +39,14 @@ export function generateOrderReceiptHtml(order: OrderConfirmation): string {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Order Confirmation - MAISON</title>
+  <title>Order Confirmation - Elite Fashion Hub</title>
 </head>
 <body style="margin: 0; padding: 40px 20px; background-color: #f7f6f5; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1b1c1c;">
   <div style="max-width: 580px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e5e5; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
     
     <!-- Brand Header -->
     <div style="text-align: center; border-bottom: 1px solid #1b1c1c; padding-bottom: 24px; margin-bottom: 32px;">
-      <h1 style="margin: 0; font-size: 24px; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase;">MAISON</h1>
+      <h1 style="margin: 0; font-size: 24px; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase;">ELITE FASHION HUB</h1>
       <p style="margin: 6px 0 0 0; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #747878;">Haute Couture & Luxury Ready-To-Wear</p>
     </div>
 
@@ -108,7 +108,7 @@ export function generateOrderReceiptHtml(order: OrderConfirmation): string {
 
     <!-- Footer -->
     <div style="border-top: 1px solid #f0efee; padding-top: 24px; text-align: center; font-size: 11px; color: #9a9d9d; line-height: 1.6;">
-      <p style="margin: 0 0 8px 0;">MAISON Global Client Concierge • 24/7 Atelier Assistance</p>
+      <p style="margin: 0 0 8px 0;">Elite Fashion Hub Global Client Concierge • 24/7 Atelier Assistance</p>
       <p style="margin: 0;">Paris • Milan • London • Nairobi • Sydney • New York</p>
     </div>
   </div>
@@ -130,7 +130,7 @@ export async function sendOrderConfirmationNotifications(order: OrderConfirmatio
     recipient: order.shippingAddress.email,
     channel: 'email',
     type: 'order_receipt',
-    subject: `Order Confirmation #${order.orderId} - MAISON Atelier`,
+    subject: `Order Confirmation #${order.orderId} - Elite Fashion Hub`,
     body: generateOrderReceiptHtml(order),
     status: 'delivered',
     trackingNumber: order.trackingNumber || 'DHL-EXP-94821039',
@@ -147,7 +147,7 @@ export async function sendOrderConfirmationNotifications(order: OrderConfirmatio
     channel: 'sms',
     type: 'order_receipt',
     subject: 'SMS Order Dispatch Alert',
-    body: `MAISON: Order #${order.orderId} confirmed ($${order.total.toFixed(2)} USD). Tracking: ${
+    body: `Elite Fashion Hub: Order #${order.orderId} confirmed ($${order.total.toFixed(2)} USD). Tracking: ${
       order.trackingNumber || 'DHL-EXP-94821039'
     } via ${order.carrier || 'DHL Express'}. Estimated delivery: ${order.estimatedDelivery || '2–3 Business Days'}. Thank you.`,
     status: 'delivered',

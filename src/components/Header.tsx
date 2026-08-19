@@ -153,7 +153,7 @@ export const Header: React.FC<HeaderProps> = ({
           }}
           className="font-display text-[20px] md:text-[24px] tracking-[0.22em] uppercase text-[#1b1c1c] font-light text-center cursor-pointer hover:opacity-80 transition-opacity"
         >
-          MAISON
+          ELITE FASHION HUB
         </button>
       </div>
 

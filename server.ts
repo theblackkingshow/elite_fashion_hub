@@ -44,7 +44,7 @@ async function startServer() {
               Authorization: `Bearer ${resendApiKey}`,
             },
             body: JSON.stringify({
-              from: 'MAISON Atelier <orders@maison-atelier.com>',
+              from: 'Elite Fashion Hub <orders@maison-atelier.com>',
               to: [email.recipient],
               subject: email.subject || `Order Confirmation #${order?.orderId}`,
               html: email.body,
@@ -66,7 +66,7 @@ async function startServer() {
             },
             body: JSON.stringify({
               personalizations: [{ to: [{ email: email.recipient }] }],
-              from: { email: 'orders@maison-atelier.com', name: 'MAISON Atelier' },
+              from: { email: 'orders@maison-atelier.com', name: 'Elite Fashion Hub' },
               subject: email.subject || `Order Confirmation #${order?.orderId}`,
               content: [{ type: 'text/html', value: email.body }],
             }),
@@ -108,7 +108,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`MAISON Boutique & Atelier Server running on http://localhost:${PORT}`);
+    console.log(`Elite Fashion Hub server running on http://localhost:${PORT}`);
   });
 }
 

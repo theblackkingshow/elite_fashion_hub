@@ -6,7 +6,7 @@ export const FEATURED_PRODUCT: Product = {
   category: 'Women',
   gender: 'Women',
   subCategory: 'Outerwear',
-  brand: 'MAISON Atelier',
+  brand: 'Elite Fashion Hub',
   price: 120.0,
   originalPrice: 150.0,
   rating: 4.8,

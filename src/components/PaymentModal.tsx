@@ -69,7 +69,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
   const [saveCard, setSaveCard] = useState(true);
 
   // PayID / BPAY state
-  const payIdEmail = 'payments@maison-atelier.com.au';
+  const payIdEmail = 'payments@elitefashionhub.com.au';
   const bpayBillerCode = '89402';
   const bpayRef = '9482 0184 72';
 
@@ -103,7 +103,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
 
   const handleApplyPromo = (e: React.FormEvent) => {
     e.preventDefault();
-    if (promoCode.trim().toUpperCase() === 'MAISON10') {
+    if (['MAISON10', 'ELITE10'].includes(promoCode.trim().toUpperCase())) {
       setDiscountPercent(10);
       setPromoMsg('10% Australian editorial privilege discount applied.');
     } else if (promoCode.trim().toUpperCase() === 'ARCHIVE') {
@@ -234,7 +234,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
         <div className="flex justify-between items-center pb-5 border-b border-[#e5e5e5]">
           <div className="flex items-center gap-3">
             <span className="font-display text-[22px] md:text-[26px] uppercase tracking-[0.15em] text-[#1b1c1c] font-light">
-              MAISON
+              ELITE FASHION HUB
             </span>
             <span className="text-[#c4c7c7]">|</span>
             <div className="flex items-center gap-2">
@@ -447,7 +447,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                       Sent to: {confirmedOrder.shippingAddress.phone || '+61 412 890 345'}
                     </p>
                     <p className="text-[#1b1c1c] text-[11px] font-mono mt-1.5 p-2 bg-[#fbf9f9] border border-[#efeded]">
-                      "MAISON: Order #{confirmedOrder.orderId} confirmed (${confirmedOrder.total.toFixed(2)} AUD). Australia Post Tracking: {confirmedOrder.trackingNumber}."
+                      "Elite Fashion Hub: Order #{confirmedOrder.orderId} confirmed (${confirmedOrder.total.toFixed(2)} AUD). Australia Post Tracking: {confirmedOrder.trackingNumber}."
                     </p>
                   </div>
                 </div>
@@ -481,7 +481,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                 onClick={onClose}
                 className="bg-[#1b1c1c] text-white font-display text-[12px] uppercase tracking-[0.15em] px-8 py-4 hover:bg-[#5d5f5f] transition-colors cursor-pointer"
               >
-                Return to MAISON Archive
+                Return to Elite Fashion Hub Archive
               </button>
             </div>
           </div>
@@ -779,7 +779,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                       </div>
                       <div className="flex justify-between">
                         <span className="text-[#747878]">Account Name:</span>
-                        <span className="text-[#1b1c1c]">MAISON HAUTE COUTURE PTY LTD</span>
+                        <span className="text-[#1b1c1c]">ELITE FASHION HUB PTY LTD</span>
                       </div>
                     </div>
                   </div>
@@ -928,7 +928,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                   <div className="flex gap-2">
                     <input
                       type="text"
-                      placeholder="VOUCHER (MAISON10 / AUSPOST)"
+                      placeholder="VOUCHER (ELITE10 / AUSPOST)"
                       value={promoCode}
                       onChange={(e) => setPromoCode(e.target.value)}
                       className="flex-1 bg-[#fbf9f9] border border-[#e5e5e5] px-3 py-2 text-[11px] font-mono uppercase tracking-wider text-[#1b1c1c] focus:outline-none focus:border-[#1b1c1c]"

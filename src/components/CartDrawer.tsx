@@ -33,7 +33,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
   const handleApplyPromo = (e: React.FormEvent) => {
     e.preventDefault();
-    if (promoCode.trim().toUpperCase() === 'MAISON10') {
+    if (['MAISON10', 'ELITE10'].includes(promoCode.trim().toUpperCase())) {
       setDiscountPercent(10);
       setPromoMessage('10% editorial privilege discount applied.');
     } else if (promoCode.trim().toUpperCase() === 'ARCHIVE') {
@@ -182,7 +182,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               <div className="flex gap-2">
                 <input
                   type="text"
-                  placeholder="PROMO CODE (MAISON10)"
+                  placeholder="PROMO CODE (ELITE10)"
                   value={promoCode}
                   onChange={(e) => setPromoCode(e.target.value)}
                   className="flex-1 bg-white border border-[#e5e5e5] px-3 py-2 text-[11px] font-mono uppercase tracking-wider text-[#1b1c1c] focus:outline-none focus:border-[#1b1c1c]"

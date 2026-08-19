@@ -9,7 +9,7 @@ interface SEOHeadProps {
 export const SEOHead: React.FC<SEOHeadProps> = ({ product, category }) => {
   useEffect(() => {
     if (product) {
-      document.title = `${product.title} — MAISON Atelier Australia`;
+      document.title = `${product.title} — Elite Fashion Hub Australia`;
 
       // Update OpenGraph meta tags dynamically
       const updateMeta = (prop: string, content: string) => {
@@ -22,7 +22,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ product, category }) => {
         el.setAttribute('content', content);
       };
 
-      updateMeta('og:title', `${product.title} | MAISON High Fashion`);
+      updateMeta('og:title', `${product.title} | Elite Fashion Hub High Fashion`);
       updateMeta('og:description', product.description.slice(0, 160));
       if (product.images?.[0]?.src) {
         updateMeta('og:image', product.images[0].src);
@@ -48,7 +48,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ product, category }) => {
         sku: product.sku,
         brand: {
           '@type': 'Brand',
-          name: product.brand || 'MAISON Atelier',
+          name: product.brand || 'Elite Fashion Hub',
         },
         offers: {
           '@type': 'Offer',
@@ -59,15 +59,15 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ product, category }) => {
           itemCondition: 'https://schema.org/NewCondition',
           seller: {
             '@type': 'Organization',
-            name: 'MAISON Atelier',
+            name: 'Elite Fashion Hub',
           },
         },
       };
       script.textContent = JSON.stringify(productSchema);
     } else if (category) {
-      document.title = `${category} Collection — MAISON Atelier`;
+      document.title = `${category} Collection — Elite Fashion Hub`;
     } else {
-      document.title = 'MAISON — High Fashion & Luxury Atelier';
+      document.title = 'Elite Fashion Hub — High Fashion & Luxury Atelier';
     }
   }, [product, category]);
 

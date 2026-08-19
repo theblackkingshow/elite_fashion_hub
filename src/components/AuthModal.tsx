@@ -49,10 +49,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
     try {
       if (mode === 'register') {
         await authService.registerWithEmail(email, password, displayName || undefined);
-        setSuccessMessage('Account registered successfully. Welcome to MAISON.');
+        setSuccessMessage('Account registered successfully. Welcome to Elite Fashion Hub.');
       } else {
         await authService.signInWithEmail(email, password);
-        setSuccessMessage('Welcome back to MAISON Atelier.');
+        setSuccessMessage('Welcome back to Elite Fashion Hub.');
       }
       setTimeout(() => {
         onClose();
@@ -90,7 +90,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess
         {/* Brand Header */}
         <div className="text-center pb-6 border-b border-[#e5e5e5] mb-6">
           <span className="font-display tracking-[0.25em] text-[18px] uppercase text-[#1b1c1c] font-light block">
-            MAISON
+            ELITE FASHION HUB
           </span>
           <p className="text-[10px] uppercase font-mono tracking-[0.15em] text-[#747878] mt-1">
             Client Authentication & Atelier Membership

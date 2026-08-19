@@ -257,7 +257,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(products, null, 2));
     const downloadAnchor = document.createElement('a');
     downloadAnchor.setAttribute('href', dataStr);
-    downloadAnchor.setAttribute('download', `maison_inventory_${new Date().toISOString().slice(0, 10)}.json`);
+    downloadAnchor.setAttribute('download', `elite_fashion_hub_inventory_${new Date().toISOString().slice(0, 10)}.json`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
@@ -358,7 +358,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2.5">
             <span className="font-display text-[20px] uppercase tracking-[0.2em] font-light text-white">
-              MAISON
+              ELITE FASHION HUB
             </span>
             <span className="bg-[#333535] text-[#d4d6d6] text-[9px] font-mono uppercase px-2 py-0.5 tracking-widest border border-[#484a4a]">
               ATELIER PORTAL
@@ -1342,7 +1342,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
               Confirm Archival Deletion
             </h3>
             <p className="text-[13px] text-[#5d5f5f] leading-relaxed">
-              Are you sure you wish to remove this garment from the active MAISON boutique catalog? This action will immediately unlist it from client views.
+              Are you sure you wish to remove this garment from the active Elite Fashion Hub catalog? This action will immediately unlist it from client views.
             </p>
             <div className="flex justify-end gap-3 pt-2">
               <button
