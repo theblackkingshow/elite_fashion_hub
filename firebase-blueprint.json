@@ -1,0 +1,92 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Fashion garments, shoes, and luxury accessories catalog item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 256 },
+        "sku": { "type": "string", "maxLength": 64 },
+        "price": { "type": "number" },
+        "originalPrice": { "type": "number" },
+        "category": { "type": "string", "maxLength": 64 },
+        "subCategory": { "type": "string", "maxLength": 64 },
+        "gender": { "type": "string", "maxLength": 32 },
+        "fabric": { "type": "string", "maxLength": 128 },
+        "inStock": { "type": "boolean" },
+        "brand": { "type": "string", "maxLength": 128 },
+        "description": { "type": "string", "maxLength": 2048 },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "title", "sku", "price", "category", "subCategory", "fabric", "inStock"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer purchase order with checkout items, shipping address, payment details, and dispatch status",
+      "type": "object",
+      "properties": {
+        "orderId": { "type": "string", "maxLength": 128 },
+        "customerEmail": { "type": "string", "maxLength": 256 },
+        "customerName": { "type": "string", "maxLength": 256 },
+        "customerPhone": { "type": "string", "maxLength": 64 },
+        "shippingAddress": { "type": "string", "maxLength": 512 },
+        "totalAmount": { "type": "number" },
+        "paymentMethod": { "type": "string", "maxLength": 64 },
+        "status": { "type": "string", "maxLength": 64 },
+        "trackingNumber": { "type": "string", "maxLength": 128 },
+        "carrier": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["orderId", "customerEmail", "customerName", "totalAmount", "paymentMethod", "status"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "Transactional email and SMS dispatch logs with delivery status and tracking payload",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "orderId": { "type": "string", "maxLength": 128 },
+        "recipient": { "type": "string", "maxLength": 256 },
+        "type": { "type": "string", "maxLength": 32 },
+        "subject": { "type": "string", "maxLength": 256 },
+        "message": { "type": "string", "maxLength": 4096 },
+        "status": { "type": "string", "maxLength": 32 },
+        "sentAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "orderId", "recipient", "type", "subject", "status"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated patron profile with contact information, loyalty tier, and saved shipping preferences",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 256 },
+        "displayName": { "type": "string", "maxLength": 256 },
+        "phone": { "type": "string", "maxLength": 64 },
+        "tier": { "type": "string", "maxLength": 64 },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["uid", "email"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Collection of boutique products and fashion items"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Collection of customer purchase orders"
+    },
+    "/notifications/{notificationId}": {
+      "schema": "Notification",
+      "description": "Collection of transactional email and SMS dispatch records"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Collection of customer account profiles and addresses"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny all unmatched documents
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128;
+    }
+
+    // Products collection: Readable by anyone so customer boutique works publicly
+    match /products/{productId} {
+      allow read: if isValidId(productId);
+      allow write: if isValidId(productId);
+    }
+
+    // Orders collection: Creatable by customers upon checkout, readable by ID
+    match /orders/{orderId} {
+      allow read: if isValidId(orderId);
+      allow create: if isValidId(orderId) &&
+        request.resource.data.orderId is string &&
+        request.resource.data.customerEmail is string &&
+        request.resource.data.totalAmount is number;
+      allow update, delete: if isValidId(orderId);
+    }
+
+    // Notifications (Transactional Email / SMS logs)
+    match /notifications/{notificationId} {
+      allow read: if isValidId(notificationId);
+      allow create: if isValidId(notificationId) &&
+        request.resource.data.orderId is string &&
+        request.resource.data.recipient is string;
+      allow update, delete: if isValidId(notificationId);
+    }
+
+    // User Accounts & Client Profiles (RBAC & PII isolation)
+    match /users/{userId} {
+      allow read: if isValidId(userId) && isSignedIn() && (request.auth.uid == userId);
+      allow create, update: if isValidId(userId) && isSignedIn() && (request.auth.uid == userId) &&
+        request.resource.data.uid == userId &&
+        request.resource.data.email is string;
+      allow delete: if isValidId(userId) && isSignedIn() && (request.auth.uid == userId);
+    }
+  }
+}
