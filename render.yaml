@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: elite-fashion-hub
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: RESEND_API_KEY
+        sync: false
+      - key: SENDGRID_API_KEY
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
